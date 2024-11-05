@@ -5,7 +5,7 @@
     nameservers = [ "9.9.9.9" ];
     wireless = {
       enable = true;
-      environmentFile = "/root/wireless.env";
+      secretsFile = "/root/wireless.env";
       interfaces = ["wlo1"];
       userControlled.enable = true;
       networks = {
@@ -26,7 +26,7 @@
 	    key_mgmt=WPA-EAP
 	    eap=PEAP
 	    identity="spudulis@lancaster.ac.uk"
-	    password="@PASS_EDUROAM@"
+	    password=ext:PASS_EDUROAM
 	    '';
 	};
       };
