@@ -11,7 +11,7 @@
       ./hardware-configuration.nix
       ./network-configuration.nix
     ];
-    settings.experimental-features= [ "nix-command" "flakes" ];
+  nixpkgs.config.settings.experimental-features= [ "nix-command" "flakes" ];
 
 
   # Use the systemd-boot EFI boot loader.
