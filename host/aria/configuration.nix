@@ -10,6 +10,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./network-configuration.nix
+      inputs.home-manager.nixosModules.default
     ];
   nixpkgs.config.settings.experimental-features= [ "nix-command" "flakes" ];
 
@@ -130,6 +131,10 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
+
+
+  
+
   nixpkgs.config.allowUnfree = true;
   users = {
     users = {
@@ -147,6 +152,12 @@
       sddm = {
         enable = true;
       };
+    };
+  };
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "ignas" = import ./home.nix;
     };
   };
 }
