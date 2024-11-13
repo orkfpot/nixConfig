@@ -6,11 +6,19 @@
   };
 
   outputs = { self, nixpkgs }: {
-    nixosConfigurations.aria = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./host/aria/configuration.nix
-      ];
+    nixosConfigurations = {
+      aria = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./host/aria/configuration.nix
+        ];
+      };
+      gerald = nixpkgs.lob.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./host/gerald/configuration.nix
+        ];
+      };
     };
   };
 }
