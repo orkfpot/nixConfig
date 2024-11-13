@@ -10,6 +10,7 @@
   };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   outputs = { self, nixpkgs }: {
     nixosConfigurations = {
       aria = nixpkgs.lib.nixosSystem {
@@ -23,6 +24,8 @@
         modules = [
           ./host/gerald/configuration.nix
 =======
+=======
+>>>>>>> dfe3c170670b4a08ab5c9587d3abd3197a7a157b
   outputs = { nixpkgs , ... }: {
     nixosConfigurations = {
       aria = nixpkgs.lib.nixosSystem {
@@ -31,6 +34,9 @@
         modules = [
           ./host/aria/configuration.nix
           inputs.home-manager.nixosModules
+<<<<<<< HEAD
+>>>>>>> dfe3c170670b4a08ab5c9587d3abd3197a7a157b
+=======
 >>>>>>> dfe3c170670b4a08ab5c9587d3abd3197a7a157b
         ];
       };
