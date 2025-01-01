@@ -24,11 +24,11 @@
     fsType = "ext4";
   };
 
-  fileSystems."/hdd" =
-  {
-    device = "/dev/disk/by-uuid/220b388b-c5a1-48e6-8496-a3519a49c499";
-    fsType = "ext4";
-  };
+#  fileSystems."/hdd" =
+#  {
+#    device = "/dev/disk/by-uuid/220b388b-c5a1-48e6-8496-a3519a49c499";
+#    fsType = "ext4";
+#  };
 
   swapDevices = [ ];
 

@@ -3,7 +3,7 @@
 {
   imports =
   [
-    ./waybar.nix
+#    ./waybar.nix
   ];
   environment.systemPackages = with pkgs; [
     grim # screenshot functionality
@@ -12,8 +12,17 @@
     mako # notification system developed by swaywm maintainer
     nemo # file explorer
     eww # widgets
-    xdg-desktop-portal
   ];
+
+  systemd.user.services.xdg-desktop-portal-gtk = {
+    wantedBy = [ "xdg-desktop-portal.service" ];
+    before = [ "xdg-desktop-portal.service" ];
+  };
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    xdgOpenUsePortal = true;
+  };
 
   # Enable the gnome-keyring secrets vault. 
   # Will be exposed through DBus to programs willing to store secrets.

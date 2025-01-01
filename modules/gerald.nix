@@ -23,6 +23,7 @@
     waypaper
     wdisplays
     shikane
+    pamixer
   ];
 	
   programs = {
