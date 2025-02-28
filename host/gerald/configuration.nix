@@ -6,20 +6,12 @@
       ./hardware-configuration.nix
       # Include own configurations
       # ./appImage-enable.nix
-      # ./network-configuration.nix
-      # ./package-configuration.nix
-      # ./package-unstable-configuration.nix
-      # ./package-custom-configuration.nix
-      # ./flake-configuration.nix
     ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
-
-  # enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes" ];
 
   networking.hostName = "gerald"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -83,23 +75,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -147,8 +122,8 @@
 
   # Open ports in the firewall.
   # used by kdeconnect
-  networking.firewall.allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
-  networking.firewall.allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
+  # networking.firewall.allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
+  # networking.firewall.allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -167,14 +142,11 @@
     };
   };
 
-  hardware.opengl = { 
+  hardware.opengl = {
     enable = true;
     driSupport32Bit = true;
-    driSupport = true;
     extraPackages = with pkgs;
     [
-      rocm-opencl-icd
-      rocm-opencl-runtime
       amdvlk
     ];
   };

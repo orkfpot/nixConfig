@@ -9,35 +9,26 @@
     };
   };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  outputs = { self, nixpkgs }: {
+  outputs = { self , nixpkgs , home-manager , ... }@inputs: {
     nixosConfigurations = {
       aria = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          { _module.args.inputs = inputs; }
+          home-manager.nixosModules.default
           ./host/aria/configuration.nix
+          ./base.nix
+          ./default.nix
         ];
       };
-      gerald = nixpkgs.lob.nixosSystem {
+      gerald = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          { _module.args.inputs = inputs; }
+          home-manager.nixosModules.default
           ./host/gerald/configuration.nix
-=======
-=======
->>>>>>> dfe3c170670b4a08ab5c9587d3abd3197a7a157b
-  outputs = { nixpkgs , ... }: {
-    nixosConfigurations = {
-      aria = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          ./host/aria/configuration.nix
-          inputs.home-manager.nixosModules
-<<<<<<< HEAD
->>>>>>> dfe3c170670b4a08ab5c9587d3abd3197a7a157b
-=======
->>>>>>> dfe3c170670b4a08ab5c9587d3abd3197a7a157b
+          ./base.nix
+          ./modules/default.nix
         ];
       };
     };
