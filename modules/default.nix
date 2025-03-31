@@ -6,8 +6,8 @@
 #    ./editor/nvim.nix
 #    ./de/plasma5/x.nix
 #    ./de/plasma5/wayland.nix
-    ./utils/nixos/nh.nix
-    ./wm/i3/i3.nix
+#    ./utils/nixos/nh.nix
+#    ./wm/i3/i3.nix
 #    ./termTools/fastFetch.nix
 #    ./termTools/btop.nix
 #    ./webBrowser/firefox.nix

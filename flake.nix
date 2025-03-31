@@ -29,6 +29,7 @@
           ./host/gerald/configuration.nix
           ./base.nix
           ./modules/default.nix
+          ./modules/gerald.nix
         ];
       };
     };
