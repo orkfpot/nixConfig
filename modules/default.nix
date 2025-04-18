@@ -17,4 +17,10 @@
     ./old/package-configuration.nix
     ./old/package-unstable-configuration.nix
   ];
+
+  services.xserver = {
+      # Configure keymap in X11
+      xkb.layout = "gb";
+      xkb.variant = "";
+  };
 }

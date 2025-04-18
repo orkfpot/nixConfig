@@ -10,7 +10,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./network-configuration.nix
-      inputs.home-manager.nixosModules.default
+ #      inputs.home-manager.nixosModules.default
     ];
   nixpkgs.config.settings.experimental-features= [ "nix-command" "flakes" ];
 
@@ -154,10 +154,10 @@
       };
     };
   };
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "ignas" = import ./home.nix;
-    };
-  };
+#  home-manager = {
+#    extraSpecialArgs = { inherit inputs; };
+#    users = {
+#      "ignas" = import ./home.nix;
+#    };
+#  };
 }

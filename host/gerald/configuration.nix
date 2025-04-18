@@ -54,12 +54,6 @@
           enable = true;
         };
       };
-      windowManager = 
-      {
-#        bspwm.enable = true;
-#        dwm.enable = true;
-#        evilwm.enable = true;
-      };
       # Configure keymap in X11
       xkb.layout = "gb";
       xkb.variant = "";

@@ -18,7 +18,8 @@
           home-manager.nixosModules.default
           ./host/aria/configuration.nix
           ./base.nix
-          ./default.nix
+          ./modules/default.nix
+          ./modules/aria.nix
         ];
       };
       gerald = nixpkgs.lib.nixosSystem {
