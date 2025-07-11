@@ -1,4 +1,5 @@
 { config, lib, pkgs, ... }:
+
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -21,7 +22,6 @@
     [
       vmware-horizon-client
       audacity
-      kdenlive
       protontricks
       r2mod_cli
       rare
@@ -82,7 +82,6 @@
       nh
       nix-index
       nomacs
-      obs-studio
       onlyoffice-bin
       openscad
       openssh

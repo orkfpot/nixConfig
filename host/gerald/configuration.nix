@@ -41,19 +41,12 @@
   };
 
   # Enable the X11 windowing system. services = { xserver.enable = true;
-  
-  # Enable the KDE Plasma Desktop Environment.
+
   services = {
     displayManager.sddm.enable = true;
     xserver = {
       enable = true;
       videoDrivers = [ "amdgpu" ];
-      desktopManager = {
-        plasma5.enable = true;
-        xfce = {
-          enable = true;
-        };
-      };
       # Configure keymap in X11
       xkb.layout = "gb";
       xkb.variant = "";

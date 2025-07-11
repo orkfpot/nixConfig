@@ -1,0 +1,3 @@
+[submodule "modules/wm/themes/theme-obsidian-2"]
+	path = modules/wm/themes/theme-obsidian-2
+	url = https://github.com/madmaxms/theme-obsidian-2.git

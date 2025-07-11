@@ -1,7 +1,8 @@
 { config , pkgs , ... }:
 
 {
-  imports = [
+  imports = 
+  [
 #    ./terminal/alacritty.nix
 #    ./editor/nvim.nix
 #    ./de/plasma5/x.nix
