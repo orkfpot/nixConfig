@@ -1,11 +1,18 @@
 { config , pkgs , lib, ... }:
 
 {
+  imports =
+  [
+    ./waybar.nix
+  ];
   environment.systemPackages = with pkgs; [
     grim # screenshot functionality
     slurp # screenshot functionality
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
     mako # notification system developed by swaywm maintainer
+    nemo # file explorer
+    eww # widgets
+    xdg-desktop-portal
   ];
 
   # Enable the gnome-keyring secrets vault. 
