@@ -12,6 +12,7 @@
     mako # notification system developed by swaywm maintainer
     nemo # file explorer
     eww # widgets
+    swaynotificationcenter # notifs
   ];
 
   systemd.user.services.xdg-desktop-portal-gtk = {

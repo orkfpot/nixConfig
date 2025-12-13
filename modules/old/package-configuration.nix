@@ -20,8 +20,7 @@
   users.users.ignas = {
     packages = with pkgs;
     [
-      vmware-horizon-client
-      audacity
+      omnissa-horizon-client
       protontricks
       r2mod_cli
       rare
@@ -30,6 +29,11 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
+    #CVE-2025-49794
+    #CVE-2025-49796
+    #CVE-2025-6021
+    # don't have anything front facing based on this
+    "libxml2-2.13.8"
     # END OF LIFE not an active security threat
     "electron-25.9.0"
   ];
@@ -54,8 +58,6 @@
       comma
       alacritty
       alsa-lib
-      android-tools
-      bottles
       btop
       discord-canary
       discord-screenaudio
@@ -72,11 +74,8 @@
       git
       gnumake42
       grim
-      heroic
       hyprpaper
       jdk17
-      librewolf
-      librewolf
       lm_sensors
       mangohud
       nh
@@ -88,15 +87,10 @@
       p7zip
       pkg-config
       protonup-qt
-      python3
-      python312Packages.vpk
       qemu
       ranger
-      rustup
       signal-desktop
       steam
-      sxhkd
-      teams-for-linux
       tmux
       util-linux
       vim

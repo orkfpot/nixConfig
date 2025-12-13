@@ -9,7 +9,6 @@ in
     [
       r2modman
       osu-lazer
-      prismlauncher
     ];
   };
   environment.systemPackages = with pkgs; [

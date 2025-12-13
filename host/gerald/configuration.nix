@@ -45,10 +45,13 @@
   # Enable the X11 windowing system. services = { xserver.enable = true;
 
   services = {
-    displayManager.sddm.enable = true;
+    displayManager = {
+      gdm.enable = true;
+#      sddm.enable = true;
+    };
     xserver = {
       enable = true;
-      videoDrivers = [ "amdgpu" ];
+      videoDrivers = [ "mesa" ];
       # Configure keymap in X11
       xkb.layout = "gb";
       xkb.variant = "";

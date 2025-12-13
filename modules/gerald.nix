@@ -9,6 +9,7 @@
       ./wm/i3/sway/sway.nix
       ./wm/themes/theme.nix
       ./sunshine.nix
+      ./games/mc/mc.nix
     ];
   environment.systemPackages = with pkgs;
   [
@@ -24,6 +25,7 @@
     wdisplays
     shikane
     pamixer
+    wivrn
   ];
 	
   programs = {
